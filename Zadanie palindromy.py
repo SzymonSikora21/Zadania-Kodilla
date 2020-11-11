@@ -1,8 +1,8 @@
 def palindrome_word(args):
     reversed_word = args[::-1]
     if args == reversed_word:
-        print(f"Word {args} is a palindrome")
+        return True
     else:
-        print(f"Word {args} isn't a palindrome")
+        return False
 
-palindrome_word("kajak")
+print(palindrome_word("word"))
