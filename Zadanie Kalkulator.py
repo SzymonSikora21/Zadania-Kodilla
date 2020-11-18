@@ -1,23 +1,24 @@
 import logging
-
-def count(a, b):
-
+def count(a, b, action):
+    if action == 1:
+        return a + b
+    elif action == 2:
+        return a - b
+    elif action == 3:
+        return a * b
+    elif action == 4:
+        return (a // b)
 
 if __name__ == "__main__":
-    action = input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")
-    if action > 5:
-        exit(1)
-    a = input("Podaj składnik 1:")
-    b = input("Podaj składnik 2:")
+    action = int(input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:"))
+    first_number = int(input("Podaj składnik 1:"))
+    second_number = int(input("Podaj składnik 2:"))
     if action == 1:
-        logging.info("Dodaję %s i %s" % (a, b))
+        logging.info("Dodaję %s i %s" % (first_number, second_number))
     elif action == 2:
-        logging.info("Odejmuję %s od %s" % (b, a))
+        logging.info("Odejmuję %s od %s" % (second_number, first_number))
     elif action == 3:
-        logging.info("Mnożę %s przez %s" % (a, b))
+        logging.info("Mnożę %s przez %s" % (first_number, second_number))
     elif action == 4:
-        logging.info("Dzielę %s przez %s" % (a, b))
-    else:
-        logging.info("Podano błędną liczbę")
-        exit(1)
-    count(a, b)
+        logging.info("Dzielę %s przez %s" % (first_number, second_number))
+    print(count(first_number, second_number, action))
