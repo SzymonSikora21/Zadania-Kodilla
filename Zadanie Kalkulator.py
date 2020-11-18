@@ -1,4 +1,5 @@
 import logging
+logging.basicConfig(level=logging.INFO)
 def count(a, b, action):
     if action == 1:
         return a + b
