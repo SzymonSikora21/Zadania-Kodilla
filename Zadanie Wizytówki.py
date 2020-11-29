@@ -8,7 +8,7 @@ fake = faker.Faker()
 
 class BaseContact:
 
-    def __init__(self, name: str, surname: str, phone_number: int, email: str):
+    def __init__(self, name: str, surname: str, phone_number: str, email: str):
         self.name = name
         self.surname = surname
         self.phone_number = phone_number
@@ -31,8 +31,8 @@ class BusinessContact(BaseContact):
                  email: str,
                  work_position: str,
                  company: str,
-                 work_phone_number: int
-    ):
+                 work_phone_number: str
+                 ):
         super().__init__(name, surname, phone_number, email)
         self.work_position = work_position
         self.company = company
@@ -69,14 +69,17 @@ def create_contacts(contact_type: typing.ClassVar, amount: int):
                 BaseContact(
                     name=name,
                     surname=surname,
-                    phone_number = phone_number,
+                    phone_number=phone_number,
                     email=email
                 )
             )
         else:
-            logging.warning(f"Unsupported contact type: {contact_type}, valid types are: {BaseContact}, {BusinessContact}")
+            logging.warning(
+                f"Unsupported contact type: {contact_type}, valid types are: {BaseContact}, {BusinessContact}"
+                            )
 
     return contact_list
+
 
 if __name__ == "__main__":
     contacts = []
