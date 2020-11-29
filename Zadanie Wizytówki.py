@@ -12,6 +12,12 @@ class BaseContact:
         self.phone_number = phone_number
         self.email = email
 
+    def contact(self):
+        print(f"Wybieram numer {self.phone_number} i dzwonię do {self.name} {self.surname}")
+
+    @property
+    def label_length(self) -> int:
+        return len(self.name) + len(self.surname)
 
 
 class BusinessContact(BaseContact):
@@ -29,3 +35,6 @@ class BusinessContact(BaseContact):
         self.work_position = work_position
         self.company = company
         self.work_phone_number = work_phone_number
+
+    def contact(self):
+        print(f"Wybieram numer {self.work_phone_number} i dzwonię do {self.name} {self.surname}")
