@@ -83,8 +83,8 @@ def create_contacts(contact_type: typing.ClassVar, amount: int):
 
 if __name__ == "__main__":
     contacts = []
-    contacts += create_contacts(BusinessContact, 4)
-    contacts += create_contacts(BaseContact, 4)
+    contacts += create_contacts(BusinessContact, 15)
+    contacts += create_contacts(BaseContact, 30)
 
     random.shuffle(contacts)
 
