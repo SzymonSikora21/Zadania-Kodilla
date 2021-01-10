@@ -78,6 +78,7 @@ class Library:
         best_movies = sorted_top_movies_titles[::3]
         print(best_movies)
 
+
 if __name__ == '__main__':
     library = Library("test", [
         Movie(title="Mad Max 2", release_year="1981", genre="action", watch_amount=0),
