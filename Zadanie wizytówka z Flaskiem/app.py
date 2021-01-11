@@ -1,6 +1,7 @@
 import flask
 
 from flask import render_template
+from flask import request, redirect
 
 app = flask.Flask(__name__)
 
@@ -13,6 +14,12 @@ def me():
 @app.route('/mypage/contact')
 def contact():
     return render_template("contact.html")
+
+
+@app.route('/mypage/contact', methods=['POST'])
+def contact_post():
+    print(request.form)
+    return redirect("/mypage/contact")
 
 
 if __name__ == '__main__':

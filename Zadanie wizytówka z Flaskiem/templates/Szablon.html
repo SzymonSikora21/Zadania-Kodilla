@@ -4,15 +4,13 @@
         {% block head %}
             <meta charset="utf-8">
             <title>Witaj na mojej stronie domowej</title>
-            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         {% endblock %}
     </head>
-    <header>
-        <h1>Witaj na mojej stronie domowej</h1>
+    <body>
+        <h1 class="powitanie">Witaj na mojej stronie domowej</h1>
         <img src="https://www.nba.com/nets/sites/nets/files/gettyimages-1177553205.jpg"
              alt="Kyrie Irving" title="Kyrie Irving" width="325" height="200">
-    </header>
-    <body>
         <div id="content">{% block content %}{% endblock %}</div>
     </body>
 </html>
